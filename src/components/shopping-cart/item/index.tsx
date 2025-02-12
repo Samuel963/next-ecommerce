@@ -59,7 +59,7 @@ const ShoppingCart = ({
 
           <div className="cart-product__content">
             <h3>{name}</h3>
-            <p>#{id}</p>
+            <p>#12345{id}</p>
           </div>
         </div>
       </td>
@@ -88,7 +88,7 @@ const ShoppingCart = ({
           </button>
         </div>
       </td>
-      <td>${price}</td>
+      <td>R${price}</td>
       <td className="cart-item-cancel">
         <i className="icon-cancel" onClick={() => removeFromCart()} />
       </td>

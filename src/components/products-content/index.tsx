@@ -1,16 +1,17 @@
-import { useState } from "react";
+//import { useState } from "react";
 
 import List from "./list";
 
 const ProductsContent = () => {
-  const [orderProductsOpen, setOrderProductsOpen] = useState(false);
+  //const [orderProductsOpen, setOrderProductsOpen] = useState(false);
 
   return (
     <section className="products-content">
       <div className="products-content__intro">
         <h2>
-          Men's Tops <span>(133)</span>
+          Todos <span>(7)</span>
         </h2>
+        {/*
         <button
           type="button"
           onClick={() => setOrderProductsOpen(!orderProductsOpen)}
@@ -38,8 +39,8 @@ const ProductsContent = () => {
             </div>
           </div>
         </form>
+        */}
       </div>
-
       <List />
     </section>
   );

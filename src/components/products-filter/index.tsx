@@ -2,7 +2,7 @@ import Slider from "rc-slider";
 import { useState } from "react";
 
 import productsColors from "../../utils/data/products-colors";
-import productsSizes from "../../utils/data/products-sizes";
+//import productsSizes from "../../utils/data/products-sizes";
 // data
 import productsTypes from "../../utils/data/products-types";
 import Checkbox from "./form-builder/checkbox";
@@ -25,14 +25,14 @@ const ProductsFilter = () => {
         onClick={() => setFiltersOpen(!filtersOpen)}
         className={`products-filter__menu-btn ${filtersOpen ? "products-filter__menu-btn--active" : ""}`}
       >
-        Add Filter <i className="icon-down-open" />
+        Adicionar filtro <i className="icon-down-open" />
       </button>
 
       <div
         className={`products-filter__wrapper ${filtersOpen ? "products-filter__wrapper--open" : ""}`}
       >
         <div className="products-filter__block">
-          <button type="button">Product type</button>
+          <button type="button">Tipo</button>
           <div className="products-filter__block__content">
             {productsTypes.map((type) => (
               <Checkbox key={type.id} name="product-type" label={type.name} />
@@ -41,17 +41,17 @@ const ProductsFilter = () => {
         </div>
 
         <div className="products-filter__block">
-          <button type="button">Price</button>
+          <button type="button">Preço</button>
           <div className="products-filter__block__content">
             <Range
-              min={0}
-              max={20}
-              defaultValue={[3, 10]}
-              tipFormatter={(value) => `${value}%`}
+              min={10}
+              max={50}
+              defaultValue={[15, 30]}
+              tipFormatter={(value) => `R$${value}`}
             />
           </div>
         </div>
-
+        {/*
         <div className="products-filter__block">
           <button type="button">Size</button>
           <div className="products-filter__block__content checkbox-square-wrapper">
@@ -65,7 +65,7 @@ const ProductsFilter = () => {
             ))}
           </div>
         </div>
-
+*/}
         <div className="products-filter__block">
           <button type="button">Color</button>
           <div className="products-filter__block__content">
@@ -86,7 +86,7 @@ const ProductsFilter = () => {
           type="submit"
           className="btn btn-submit btn--rounded btn--yellow"
         >
-          Apply
+          Aplicar
         </button>
       </div>
     </form>

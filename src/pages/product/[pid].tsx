@@ -1,12 +1,12 @@
 import type { GetServerSideProps } from "next";
-import { useState } from "react";
+//import { useState } from "react";
 
 import Breadcrumb from "@/components/breadcrumb";
 import Footer from "@/components/footer";
 import Content from "@/components/product-single/content";
-import Description from "@/components/product-single/description";
+//import Description from "@/components/product-single/description";
 import Gallery from "@/components/product-single/gallery";
-import Reviews from "@/components/product-single/reviews";
+//import Reviews from "@/components/product-single/reviews";
 import ProductsFeatured from "@/components/products-featured";
 // types
 import type { ProductType } from "@/types";
@@ -31,7 +31,7 @@ export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 };
 
 const Product = ({ product }: ProductPageType) => {
-  const [showBlock, setShowBlock] = useState("description");
+  //const [showBlock, setShowBlock] = useState("description");
 
   return (
     <Layout>
@@ -43,7 +43,7 @@ const Product = ({ product }: ProductPageType) => {
             <Gallery images={product.images} />
             <Content product={product} />
           </div>
-
+          {/*
           <div className="product-single__info">
             <div className="product-single__info-btns">
               <button
@@ -61,10 +61,12 @@ const Product = ({ product }: ProductPageType) => {
                 Reviews (2)
               </button>
             </div>
-
+            
             <Description show={showBlock === "description"} />
             <Reviews product={product} show={showBlock === "reviews"} />
+            
           </div>
+          */}
         </div>
       </section>
 
