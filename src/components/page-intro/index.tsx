@@ -31,10 +31,10 @@ const PageIntro = () => {
           >
             <div className="container">
               <div className="page-intro__slide__content">
-                <h2>Make your house into a home</h2>
+                <h2>Apliques Sublimados</h2>
                 <a href="#" className="btn-shop">
                   <i className="icon-right" />
-                  Shop now
+                  Compre agora!
                 </a>
               </div>
             </div>

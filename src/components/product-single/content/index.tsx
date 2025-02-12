@@ -66,7 +66,7 @@ const Content = ({ product }: ProductContent) => {
           <br />
           {product.id}
         </h5>
-        <span className="product-on-sale">Sale</span>
+        <span className="product-on-sale">Promoção</span>
         <h2 className="product__name">{product.name}</h2>
 
         <div className="product__prices">
