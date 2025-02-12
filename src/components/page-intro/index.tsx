@@ -10,15 +10,11 @@ const PageIntro = () => {
         <SwiperSlide>
           <div
             className="page-intro__slide"
-            style={{ backgroundImage: "url('/images/slide-1.jpg')" }}
+            style={{ backgroundImage: "url('/images/products/IMG_0335.jpg')" }}
           >
             <div className="container">
               <div className="page-intro__slide__content">
-                <h2>Sale of the summer collection</h2>
-                <a href="#" className="btn-shop">
-                  <i className="icon-right" />
-                  Shop now
-                </a>
+                <h2>Tudo em Apliques e Sublimaçoes</h2>
               </div>
             </div>
           </div>
@@ -27,12 +23,12 @@ const PageIntro = () => {
         <SwiperSlide>
           <div
             className="page-intro__slide"
-            style={{ backgroundImage: "url('/images/slide-2.jpg')" }}
+            style={{ backgroundImage: "url('/images/products/IMG_0336.jpg')" }}
           >
             <div className="container">
               <div className="page-intro__slide__content">
-                <h2>Apliques Sublimados</h2>
-                <a href="#" className="btn-shop">
+                <h2>Novos Modelos</h2>
+                <a href="/products" className="btn-shop">
                   <i className="icon-right" />
                   Compre agora!
                 </a>
@@ -45,27 +41,27 @@ const PageIntro = () => {
       <div className="shop-data">
         <div className="container">
           <ul className="shop-data__items">
-            <li>
+            <li style={{ width: "33%" }}>
               <i className="icon-shipping" />
               <div className="data-item__content">
-                <h4>Free Shipping</h4>
-                <p>On purchases over $199</p>
+                <h4>Entrega rápida</h4>
+                <p>Mais praticidade</p>
               </div>
             </li>
 
-            <li>
+            <li style={{ width: "33%" }}>
               <i className="icon-shipping" />
               <div className="data-item__content">
-                <h4>99% Satisfied Customers</h4>
-                <p>Our clients' opinions speak for themselves</p>
+                <h4>Disponibilidade</h4>
+                <p>Consulta de Disponibilidade</p>
               </div>
             </li>
 
-            <li>
+            <li style={{ width: "33%" }}>
               <i className="icon-cash" />
               <div className="data-item__content">
-                <h4>Originality Guaranteed</h4>
-                <p>30 days warranty for each product from our store</p>
+                <h4>Segurança na hora de pedir</h4>
+                <p>Garantia para seu pedido</p>
               </div>
             </li>
           </ul>

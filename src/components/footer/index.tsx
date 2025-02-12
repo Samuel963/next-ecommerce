@@ -7,13 +7,14 @@ const Footer = () => {
         <div className="site-footer__top">
           <div className="site-footer__description">
             <h6>
-              <Logo /> <span>E</span>-Shop
+              <Logo />
             </h6>
             <p>
-              House My Brand designs clothing for the young, the old & everyone
-              in between – but most importantly, for the fashionable
+              Rayssa corte a laser cria peças únicas para os ousados, os criativos e todos que se
+              atrevem a se destacar – mas, acima de tudo, para aqueles que valorizam a arte do detalhe e da inovação.
             </p>
             <ul className="site-footer__social-networks">
+              {/* 
               <li>
                 <a href="#">
                   <i className="icon-facebook" />
@@ -31,12 +32,13 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#">
-                  <i className="icon-instagram" />
+                  <i className="icon-youtube-play" />
                 </a>
               </li>
+                */}
               <li>
-                <a href="#">
-                  <i className="icon-youtube-play" />
+                <a href="https://www.instagram.com/rayssa_cortealaser/">
+                  <i className="icon-instagram" />
                 </a>
               </li>
             </ul>
@@ -44,48 +46,33 @@ const Footer = () => {
 
           <div className="site-footer__links">
             <ul>
-              <li>Shopping online</li>
+              <li>Serviços personalizados</li>
               <li>
-                <a href="#">Order Status</a>
+                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20apliques">Apliques</a>
               </li>
               <li>
-                <a href="#">Shipping and Delivery</a>
+                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20core%20a%20laser">Corte a laser</a>
               </li>
               <li>
-                <a href="#">Returns</a>
+                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20MDF">MDF</a>
               </li>
               <li>
-                <a href="#">Payment options</a>
-              </li>
-              <li>
-                <a href="#">Contact Us</a>
+                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20sublimados">Sublimados</a>
               </li>
             </ul>
             <ul>
-              <li>Information</li>
+              <li>Endereço</li>
               <li>
-                <a href="#">Gift Cards</a>
-              </li>
-              <li>
-                <a href="#">Find a store</a>
-              </li>
-              <li>
-                <a href="#">Newsletter</a>
-              </li>
-              <li>
-                <a href="#">Bacome a member</a>
-              </li>
-              <li>
-                <a href="#">Site feedback</a>
+                <a href="https://maps.app.goo.gl/mp6W3CtfWfZHZKUe7">Rua São João da Escócia - 285 - Salgado - Caruaru - PE</a>
               </li>
             </ul>
             <ul>
-              <li>Contact</li>
+              <li>Contato</li>
               <li>
-                <a href="#">store@uikit.com</a>
+                <a href="mailto:rayssacortealaser@gmail.com">rayssacortealaser@gmail.com</a>
               </li>
               <li>
-                <a href="#">Hotline: +1 131 138 138</a>
+                <a href="https://api.whatsapp.com/send?phone=5581982286330">(81) 98228-6330</a>
               </li>
             </ul>
           </div>
@@ -94,7 +81,7 @@ const Footer = () => {
 
       <div className="site-footer__bottom">
         <div className="container">
-          <p>DESIGN BY ICEO.CO - © 2019. ALL RIGHTS RESERVED.</p>
+          <p>DESENVOLVIDOR POR ES.CO - © 2025.</p>
         </div>
       </div>
     </footer>

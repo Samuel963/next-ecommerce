@@ -21,9 +21,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
     !(!arrayPaths.includes(router.pathname) || isErrorPage),
   );
   const [menuOpen, setMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
   const navRef = useRef(null);
-  const searchRef = useRef(null);
 
   const headerClass = () => {
     if (window.pageYOffset === 0) {
@@ -48,36 +46,29 @@ const Header = ({ isErrorPage }: HeaderType) => {
     setMenuOpen(false);
   };
 
-  const closeSearch = () => {
-    setSearchOpen(false);
-  };
-
   // on click outside
   useOnClickOutside(navRef, closeMenu);
-  useOnClickOutside(searchRef, closeSearch);
 
   return (
     <header className={`site-header ${!onTop ? "site-header--fixed" : ""}`}>
       <div className="container">
         <Link href="/">
           <h1 className="site-logo">
-            <Logo />
-            E-Shop
+            <Logo onTop={onTop} />
           </h1>
         </Link>
         <nav
           ref={navRef}
           className={`site-nav ${menuOpen ? "site-nav--open" : ""}`}
         >
-          <Link href="/products">Products</Link>
-          <a href="#">Inspiration</a>
-          <a href="#">Rooms</a>
-          <button className="site-nav__btn">
-            <p>Account</p>
-          </button>
+          <Link href="/">Início</Link>
+          <Link href="/products">Apliques</Link>
+          <Link href="/products">Sublimaçoes</Link>
+          <Link href="/products">Acrilico</Link>
         </nav>
 
         <div className="site-header__actions">
+          {/*
           <button
             ref={searchRef}
             className={`search-form-wrapper ${searchOpen ? "search-form--active" : ""}`}
@@ -98,6 +89,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
               className="icon-search"
             />
           </button>
+          */}
           <Link href="/cart" legacyBehavior>
             <button className="btn-cart">
               <i className="icon-cart" />
@@ -106,11 +98,13 @@ const Header = ({ isErrorPage }: HeaderType) => {
               )}
             </button>
           </Link>
+          {/*
           <Link href="/login" legacyBehavior>
             <button className="site-header__btn-avatar">
               <i className="icon-avatar" />
             </button>
           </Link>
+          */}
           <button
             onClick={() => setMenuOpen(true)}
             className="site-header__btn-menu"
