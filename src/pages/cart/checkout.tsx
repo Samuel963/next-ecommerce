@@ -40,13 +40,30 @@ const CheckoutPage = () => {
     }));
   };
 
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não for número
+    if (value.length <= 2) {
+      value = value.replace(/(\d{2})/, '($1');
+    } else if (value.length <= 6) {
+      value = value.replace(/(\d{2})(\d{1,5})/, '($1) $2');
+    } else {
+      value = value.replace(/(\d{2})(\d{1,5})(\d{4})/, '($1) $2-$3');
+    }
+    setFormData({
+      ...formData,
+      phone: value,
+    });
+  };
+
   function gerarMensagem(cliente: any, itens: any) {
+    console.log(cliente.phone.length);
     // Cabeçalho da mensagem com o nome e telefone
     let mensagem = `Nome: ${cliente.name}\nTelefone: ${cliente.phone}\n\nItens pedidos:\n`;
 
     // Adiciona cada item pedido na mensagem
     itens.forEach((item: any, index: any) => {
       mensagem += `${index + 1}. Nome: ${item.name}\n`;
+      mensagem += `Código: ${item.id}\n`;
       mensagem += `Preço: R$ ${item.price},00\n`;
       mensagem += `Quantidade: ${item.count}\n`;
       mensagem += `Cor: ${item.color || "Não especificada"}\n\n`;
@@ -57,6 +74,7 @@ const CheckoutPage = () => {
 
   function criarLinkWhatsApp(cliente: any, itens: any) {
     const mensagem = gerarMensagem(cliente, itens);
+    console.log(mensagem);
     const textoCodificado = encodeURIComponent(mensagem); // Codifica a mensagem para o link
     const link = `https://api.whatsapp.com/send?phone=5581982286330&text=${textoCodificado}`;
     return link;
@@ -64,6 +82,16 @@ const CheckoutPage = () => {
 
   // Função chamada ao submeter o formulário
   const handleSubmit = (e: React.FormEvent) => {
+    if (formData.name === "" || formData.phone === "") {
+      alert("Preencha todos os campos");
+      return;
+    }
+
+    if (formData.phone.length < 15) {
+      alert("Telefone inválido");
+      return;
+    }
+
     e.preventDefault();
 
     const linkWhatsApp = criarLinkWhatsApp(formData, itens);
@@ -101,11 +129,12 @@ const CheckoutPage = () => {
                     <div className="form__col">
                       <input
                         className="form__input form__input--sm"
-                        type="number"
+                        type="text"
                         name="phone"
                         placeholder="Telefone"
                         value={formData.phone}
-                        onChange={handleInputChange}
+                        maxLength={15}
+                        onChange={handlePhoneChange}
                       />
                     </div>
                   </div>
