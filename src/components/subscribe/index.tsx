@@ -7,15 +7,9 @@ const Subscribe = () => {
           className="subscribe__content"
         >
           <h4>
-            Subscribe to our newsletter and receive exclusive offers every week
+            Venha nos conhecer e se apaixonar por nossos produtos.
           </h4>
 
-          <form className="subscribe__form">
-            <input type="email" placeholder="Email address" />
-            <button type="submit" className="btn btn--rounded btn--yellow">
-              Subscribe
-            </button>
-          </form>
         </div>
       </div>
     </section>
