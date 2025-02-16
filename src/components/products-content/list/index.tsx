@@ -1,30 +1,39 @@
-import useSwr from "swr";
+import { useEffect, useState } from "react";
 
-import type { ProductTypeList } from "@/types";
+import { getAllProducts } from "@/pages/api/getProducts";
+import { getId } from "@/utils/getID";
 
 import ProductItem from "../../product-item";
 import ProductsLoading from "./loading";
 
 const ProductsContent = () => {
-  const fetcher = (url: string) => fetch(url).then((res) => res.json());
-  const { data, error } = useSwr("/api/products", fetcher);
+  const [products, setProducts] = useState([]);
 
-  if (error) return <div>Failed to load users</div>;
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getAllProducts();
+      setProducts(data);
+    };
+
+    fetchData();
+  }, []);
+
+  if (!products) return <div>Spin aqui</div>;
   return (
     <>
-      {!data && <ProductsLoading />}
+      {!products && <ProductsLoading />}
 
-      {data && (
+      {products && (
         <section className="products-list">
-          {data.map((item: ProductTypeList) => (
+          {products.map((item: any, index: any) => (
             <ProductItem
               id={item.id}
-              name={item.name}
+              name={getId(item.id)}
               price={item.price}
               color={item.color}
               currentPrice={item.currentPrice}
-              key={item.id}
-              images={item.images}
+              key={index}
+              thumb={item.thumb}
             />
           ))}
         </section>

@@ -1,11 +1,21 @@
 import Link from "next/link";
-import useSwr from "swr";
+import { useEffect, useState } from "react";
+
+import { getAllProducts } from "@/pages/api/getProducts";
 
 import ProductsCarousel from "./carousel";
 
 const ProductsFeatured = () => {
-  const fetcher = (url: string) => fetch(url).then((res) => res.json());
-  const { data } = useSwr("/api/products", fetcher);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getAllProducts();
+      setProducts(data);
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <section className="section section-products-featured">
@@ -17,7 +27,7 @@ const ProductsFeatured = () => {
           </Link>
         </header>
 
-        <ProductsCarousel products={data} />
+        <ProductsCarousel products={products} />
       </div>
     </section>
   );

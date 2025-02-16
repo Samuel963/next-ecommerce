@@ -8,7 +8,10 @@ type LayoutType = {
   children?: React.ReactNode;
 };
 
-const ErrorPage = ({ children, title = "Rayssa corte a laser" }: LayoutType) => {
+const ErrorPage = ({
+  children,
+  title = "Rayssa corte a laser",
+}: LayoutType) => {
   const router = useRouter();
   const pathname = router.pathname;
 

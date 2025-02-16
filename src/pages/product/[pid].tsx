@@ -1,6 +1,6 @@
 import type { GetServerSideProps } from "next";
-//import { useState } from "react";
 
+//import { useState } from "react";
 import Breadcrumb from "@/components/breadcrumb";
 import Footer from "@/components/footer";
 import Content from "@/components/product-single/content";
@@ -12,7 +12,6 @@ import ProductsFeatured from "@/components/products-featured";
 import type { ProductType } from "@/types";
 
 import Layout from "../../layouts/Main";
-import { server } from "../../utils/server";
 
 type ProductPageType = {
   product: ProductType;
@@ -20,7 +19,7 @@ type ProductPageType = {
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const { pid } = query;
-  const res = await fetch(`${server}/api/product/${pid}`);
+  const res = await fetch(`http://localhost:3001/api/v1/products/${pid}`);
   const product = await res.json();
 
   return {
@@ -40,7 +39,7 @@ const Product = ({ product }: ProductPageType) => {
       <section className="product-single">
         <div className="container">
           <div className="product-single__content">
-            <Gallery images={product.images} />
+            <Gallery images={product.thumb} />
             <Content product={product} />
           </div>
           {/*

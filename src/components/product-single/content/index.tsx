@@ -6,6 +6,7 @@ import type { RootState } from "@/store";
 import { addProduct } from "@/store/reducers/cart";
 import { toggleFavProduct } from "@/store/reducers/user";
 import type { ProductStoreType, ProductType } from "@/types";
+import { getId } from "@/utils/getID";
 
 import productsColors from "../../../utils/data/products-colors";
 //import productsSizes from "../../../utils/data/products-sizes";
@@ -41,12 +42,12 @@ const Content = ({ product }: ProductContent) => {
   const addToCart = () => {
     const productToSave: ProductStoreType = {
       id: product.id,
-      name: product.name,
-      thumb: product.images ? product.images[0] : "",
+      name: product.id,
+      thumb: product.thumb,
       price: product.currentPrice,
       count,
       color,
-      size: '',
+      size: "",
     };
 
     const productStore = {
@@ -62,11 +63,10 @@ const Content = ({ product }: ProductContent) => {
       <div className="product-content__intro">
         <h5 className="product__id">
           Item:
-          <br />
-          #82345{product.id}
+          <br />#{getId(product._id || product.id)}
         </h5>
         <span className="product-on-sale">Promoção</span>
-        <h2 className="product__name">{product.name}</h2>
+        <h2 className="product__name">{getId(product._id || product.id)}</h2>
 
         <div className="product__prices">
           <h4>R${product.currentPrice}</h4>

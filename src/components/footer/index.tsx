@@ -10,8 +10,9 @@ const Footer = () => {
               <Logo />
             </h6>
             <p>
-              Rayssa corte a laser cria peças únicas para os ousados, os criativos e todos que se
-              atrevem a se destacar – mas, acima de tudo, para aqueles que valorizam a arte do detalhe e da inovação.
+              Rayssa corte a laser cria peças únicas para os ousados, os
+              criativos e todos que se atrevem a se destacar – mas, acima de
+              tudo, para aqueles que valorizam a arte do detalhe e da inovação.
             </p>
             <ul className="site-footer__social-networks">
               {/* 
@@ -48,31 +49,45 @@ const Footer = () => {
             <ul>
               <li>Serviços personalizados</li>
               <li>
-                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20apliques">Apliques</a>
+                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20apliques">
+                  Apliques
+                </a>
               </li>
               <li>
-                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20core%20a%20laser">Corte a laser</a>
+                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20core%20a%20laser">
+                  Corte a laser
+                </a>
               </li>
               <li>
-                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20MDF">MDF</a>
+                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20MDF">
+                  MDF
+                </a>
               </li>
               <li>
-                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20sublimados">Sublimados</a>
+                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20sublimados">
+                  Sublimados
+                </a>
               </li>
             </ul>
             <ul>
               <li>Endereço</li>
               <li>
-                <a href="https://maps.app.goo.gl/mp6W3CtfWfZHZKUe7">Rua São João da Escócia - 285 - Salgado - Caruaru - PE</a>
+                <a href="https://maps.app.goo.gl/mp6W3CtfWfZHZKUe7">
+                  Rua São João da Escócia - 285 - Salgado - Caruaru - PE
+                </a>
               </li>
             </ul>
             <ul>
               <li>Contato</li>
               <li>
-                <a href="mailto:rayssacortealaser@gmail.com">rayssacortealaser@gmail.com</a>
+                <a href="mailto:rayssacortealaser@gmail.com">
+                  rayssacortealaser@gmail.com
+                </a>
               </li>
               <li>
-                <a href="https://api.whatsapp.com/send?phone=5581982286330">(81) 98228-6330</a>
+                <a href="https://api.whatsapp.com/send?phone=5581982286330">
+                  (81) 98228-6330
+                </a>
               </li>
             </ul>
           </div>

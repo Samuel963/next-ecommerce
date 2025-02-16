@@ -8,7 +8,7 @@ import type { ProductTypeList } from "@/types";
 
 const ProductItem = ({
   discount,
-  images,
+  thumb,
   id,
   name,
   price,
@@ -39,7 +39,7 @@ const ProductItem = ({
         </button>
 
         <Link href={`/product/${id}`}>
-          <img src={images ? images[0] : ""} alt="product" />
+          <img src={thumb} alt="product" />
           {discount && <span className="product__discount">{discount}%</span>}
         </Link>
       </div>

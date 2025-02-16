@@ -6,10 +6,7 @@ const Subscribe = () => {
           style={{ backgroundImage: "url(/images/subscribe.jpg)" }}
           className="subscribe__content"
         >
-          <h4>
-            Venha nos conhecer e se apaixonar por nossos produtos.
-          </h4>
-
+          <h4>Venha nos conhecer e se apaixonar por nossos produtos.</h4>
         </div>
       </div>
     </section>

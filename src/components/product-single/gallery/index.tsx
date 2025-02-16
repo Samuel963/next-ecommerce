@@ -1,12 +1,13 @@
 type GalleryProductType = {
-  images: string[];
+  images: string;
 };
 
 const Gallery = ({ images }: GalleryProductType) => {
-  const featImage = images[0];
+  const featImage = images;
 
   return (
     <section className="product-gallery">
+      {/*
       <div className="product-gallery__thumbs">
         {images.map((image) => (
           <div key={image} className="product-gallery__thumb">
@@ -14,6 +15,7 @@ const Gallery = ({ images }: GalleryProductType) => {
           </div>
         ))}
       </div>
+      */}
 
       <div className="product-gallery__image">
         <img src={featImage} alt="" />

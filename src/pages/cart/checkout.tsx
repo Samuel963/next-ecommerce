@@ -1,13 +1,13 @@
 import Link from "next/link";
-import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 import CheckoutItems from "@/components/checkout/items";
 import CheckoutStatus from "@/components/checkout-status";
 import type { RootState } from "@/store";
 
 import Layout from "../../layouts/Main";
-import { useRouter } from "next/router";
 
 const CheckoutPage = () => {
   const router = useRouter();
@@ -41,13 +41,13 @@ const CheckoutPage = () => {
   };
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não for número
+    let value = e.target.value.replace(/\D/g, ""); // Remove tudo que não for número
     if (value.length <= 2) {
-      value = value.replace(/(\d{2})/, '($1');
+      value = value.replace(/(\d{2})/, "($1");
     } else if (value.length <= 6) {
-      value = value.replace(/(\d{2})(\d{1,5})/, '($1) $2');
+      value = value.replace(/(\d{2})(\d{1,5})/, "($1) $2");
     } else {
-      value = value.replace(/(\d{2})(\d{1,5})(\d{4})/, '($1) $2-$3');
+      value = value.replace(/(\d{2})(\d{1,5})(\d{4})/, "($1) $2-$3");
     }
     setFormData({
       ...formData,
@@ -68,6 +68,8 @@ const CheckoutPage = () => {
       mensagem += `Quantidade: ${item.count}\n`;
       mensagem += `Cor: ${item.color || "Não especificada"}\n\n`;
     });
+
+    mensagem += `Valor total: R$ ${priceTotal},00`;
 
     return mensagem;
   }
@@ -138,7 +140,6 @@ const CheckoutPage = () => {
                       />
                     </div>
                   </div>
-
                 </form>
               </div>
             </div>
@@ -168,7 +169,12 @@ const CheckoutPage = () => {
               <button type="button" className="btn btn--rounded btn--border">
                 Continuar comprando
               </button>
-              <button type="submit" form="checkout-form" className="btn btn--rounded btn--yellow" onClick={handleSubmit}>
+              <button
+                type="submit"
+                form="checkout-form"
+                className="btn btn--rounded btn--yellow"
+                onClick={handleSubmit}
+              >
                 Finalizar Pedido
               </button>
             </div>

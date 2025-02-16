@@ -4,17 +4,20 @@ import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 import cartReducer from "./reducers/cart";
+import useProduct from "./reducers/products";
 import userReducer from "./reducers/user";
 
 //COMBINING ALL REDUCERS
 const reducer = {
   cart: cartReducer,
   user: userReducer,
+  products: useProduct,
 };
 
 const rootReducer = combineReducers({
   cart: cartReducer,
   user: userReducer,
+  products: useProduct,
 });
 
 let store = configureStore({
