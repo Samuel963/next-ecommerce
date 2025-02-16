@@ -1,5 +1,7 @@
+import { BASE_URL } from "@/utils/server";
+
 export const getAllProducts = async () => {
-  const res = await fetch("http://localhost:3001/api/v1/products/");
+  const res = await fetch(`${BASE_URL}products/`);
   const products = await res.json();
   return products;
 };

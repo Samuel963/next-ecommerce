@@ -1,3 +1,4 @@
+import { BASE_URL } from "@/utils/server";
 import type { ChangeEvent, FormEvent } from "react";
 import { useState } from "react";
 
@@ -97,7 +98,7 @@ export const useProductForm = () => {
     formToSend.append("description", description);
 
     try {
-      const response = await fetch("http://localhost:3001/api/v1/products/", {
+      const response = await fetch(`${BASE_URL}products/`, {
         method: "POST",
         body: formToSend,
       });

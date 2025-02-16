@@ -12,6 +12,7 @@ import ProductsFeatured from "@/components/products-featured";
 import type { ProductType } from "@/types";
 
 import Layout from "../../layouts/Main";
+import { BASE_URL } from "@/utils/server";
 
 type ProductPageType = {
   product: ProductType;
@@ -19,7 +20,7 @@ type ProductPageType = {
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const { pid } = query;
-  const res = await fetch(`http://localhost:3001/api/v1/products/${pid}`);
+  const res = await fetch(`${BASE_URL}products/${pid}`);
   const product = await res.json();
 
   return {
