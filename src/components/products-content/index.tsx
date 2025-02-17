@@ -9,7 +9,7 @@ const ProductsContent = () => {
     <section className="products-content">
       <div className="products-content__intro">
         <h2>
-          Todos <span>(7)</span>
+          Todos
         </h2>
         {/*
         <button
