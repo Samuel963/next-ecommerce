@@ -222,7 +222,6 @@ const UploadImageWithProductData: React.FC = () => {
                 marginBottom: "1rem",
               }}
               placeholder="Descrição do produto"
-              required
             />
           </div>
 
