@@ -1,3 +1,4 @@
+'use client'
 import { some } from "lodash";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
