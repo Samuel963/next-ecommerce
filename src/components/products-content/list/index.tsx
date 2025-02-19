@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useState } from "react";
 
 import { getAllProducts } from "@/pages/api/getProducts";
