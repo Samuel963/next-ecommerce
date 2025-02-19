@@ -19,26 +19,23 @@ const ProductsContent = () => {
     fetchData();
   }, []);
 
-  if (!products) return <div>Spin aqui</div>;
   return (
     <>
       {!products && <ProductsLoading />}
 
-      {products && (
-        <section className="products-list">
-          {products.map((item: any, index: any) => (
-            <ProductItem
-              id={item.id}
-              name={getId(item.id)}
-              price={item.price}
-              color={item.color}
-              currentPrice={item.currentPrice}
-              key={index}
-              thumb={item.thumb}
-            />
-          ))}
-        </section>
-      )}
+      <section className="products-list">
+        {products.map((item: any, index: any) => (
+          <ProductItem
+            id={item.id}
+            name={getId(item.id)}
+            price={item.price}
+            color={item.color}
+            currentPrice={item.currentPrice}
+            key={index}
+            thumb={item.thumb}
+          />
+        ))}
+      </section>
     </>
   );
 };

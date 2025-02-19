@@ -11,7 +11,7 @@ const ProductsFeatured = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getAllProducts();
+      const data = await getAllProducts(10);
       setProducts(data);
     };
 

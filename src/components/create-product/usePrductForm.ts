@@ -4,18 +4,18 @@ import { useState } from "react";
 
 interface FormDataType {
   image: File | null;
-  quantityAvailable: "";
-  currentPrice: "";
+  quantityAvailable: string;
+  currentPrice: string;
   colors: string[];
   description: string;
 }
 
 const initialFormData: FormDataType = {
   image: null,
-  quantityAvailable: "",
-  currentPrice: "",
-  colors: [],
-  description: "",
+  quantityAvailable: "50",
+  currentPrice: "15",
+  colors: ['azul', 'rosa'],
+  description: "Pacote com 10 unidades",
 };
 
 export const useProductForm = () => {
