@@ -10,6 +10,8 @@ import { Poppins } from "next/font/google";
 import Router from "next/router";
 import React, { Fragment } from "react";
 
+import { Analytics } from '@vercel/analytics/next';
+
 import { wrapper } from "../store";
 import * as gtag from "../utils/gtag";
 
@@ -35,6 +37,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
       }
     `}</style>
     <Component {...pageProps} />
+    <Analytics />
   </Fragment>
 );
 
