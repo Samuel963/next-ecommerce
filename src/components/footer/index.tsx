@@ -60,7 +60,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20aplique%20personalizado">
-                  Aplique personalizado
+                  Apliques personalizado
                 </a>
               </li>
             </ul>
