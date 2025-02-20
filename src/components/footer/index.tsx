@@ -49,23 +49,18 @@ const Footer = () => {
             <ul>
               <li>Serviços personalizados</li>
               <li>
-                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20apliques">
-                  Apliques
+                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20Tag's%20acrílico">
+                  Tag's acrílico
                 </a>
               </li>
               <li>
-                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20core%20a%20laser">
-                  Corte a laser
+                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20apliques%20a%20multimarca">
+                  Apliques multimarca
                 </a>
               </li>
               <li>
-                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20MDF">
-                  MDF
-                </a>
-              </li>
-              <li>
-                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20sublimados">
-                  Sublimados
+                <a href="https://api.whatsapp.com/send?phone=5581982286330&text=Mais%20informações%20sobre%20aplique%20personalizado">
+                  Aplique personalizado
                 </a>
               </li>
             </ul>
