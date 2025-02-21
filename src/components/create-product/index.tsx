@@ -12,6 +12,7 @@ const UploadImageWithProductData: React.FC = () => {
     handleColorChange,
     handleRemoveColor,
     handleDescriptionChange,
+    handleCategoryChange, // Adicionado para lidar com a mudança da categoria
     handleSubmit,
   } = useProductForm();
 
@@ -51,6 +52,45 @@ const UploadImageWithProductData: React.FC = () => {
           Cadastro de Produto
         </h2>
         <form onSubmit={handleSubmit} style={{ marginTop: "1.5rem" }}>
+
+          {/* Novo Dropdown para Seleção de Categoria */}
+          <div style={{ marginBottom: "1rem" }}>
+            <label
+              htmlFor="category"
+              style={{
+                display: "block",
+                fontSize: "0.875rem",
+                color: "black",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Selecione a Categoria
+            </label>
+            <select
+              id="category"
+              name="category"
+              value={formData.category}
+              onChange={handleCategoryChange}
+              defaultValue={"STITCH"}
+              style={{
+                width: "100%",
+                padding: "0.75rem",
+                border: "1px solid #ef4444",
+                borderRadius: "0.375rem",
+                fontSize: "1rem",
+                color: "#333",
+                marginBottom: "1rem",
+              }}
+            >
+              <option value="STITCH">Stitch</option>
+              <option value="BEAR">Urso</option>
+              <option value="MINNIE">Minnie</option>
+              <option value="MICKEY">Mickey</option>
+              <option value="ADULT">Adulto</option>
+              <option value="OTHER">Diversos</option>
+            </select>
+          </div>
+
           <div style={{ marginBottom: "1rem" }}>
             <label
               htmlFor="quantity-available"

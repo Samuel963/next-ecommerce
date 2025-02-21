@@ -7,6 +7,7 @@ interface FormDataType {
   quantityAvailable: string;
   currentPrice: string;
   colors: string[];
+  category: string;
   description: string;
 }
 
@@ -14,6 +15,7 @@ const initialFormData: FormDataType = {
   image: null,
   quantityAvailable: "50",
   currentPrice: "15",
+  category: "STITCH",
   colors: ['azul', 'rosa'],
   description: "Pacote com 10 unidades",
 };
@@ -71,6 +73,13 @@ export const useProductForm = () => {
     }));
   };
 
+  const handleCategoryChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      category: e.target.value,
+    }));
+  };
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
@@ -89,6 +98,7 @@ export const useProductForm = () => {
     }
 
     setIsUploading(true);
+    console.log(formData);
 
     const formToSend = new FormData();
     formToSend.append("image", image);
@@ -97,7 +107,7 @@ export const useProductForm = () => {
     formToSend.append("colors", JSON.stringify(colors));
     formToSend.append("description", description);
 
-    try {
+    /*try {
       const response = await fetch(`${BASE_URL}products/`, {
         method: "POST",
         body: formToSend,
@@ -113,7 +123,7 @@ export const useProductForm = () => {
       alert("Erro ao enviar produto: " + error.message);
     } finally {
       setIsUploading(false);
-    }
+    }*/
   };
 
   return {
@@ -125,6 +135,7 @@ export const useProductForm = () => {
     handleColorChange,
     handleRemoveColor,
     handleDescriptionChange,
+    handleCategoryChange,
     handleSubmit,
   };
 };
