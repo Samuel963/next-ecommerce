@@ -1,21 +1,18 @@
 'use client'
 import Link from "next/link";
-import { useEffect, useState } from "react";
-
-import { getAllProducts } from "@/pages/api/getProducts";
+import { useEffect } from "react";
 
 import ProductsCarousel from "./carousel";
+import { useAppContext } from "@/pages/AppContext";
+import ProductsLoading from "../products-content/list/loading";
 
 const ProductsFeatured = () => {
-  const [products, setProducts] = useState([]);
+  const { products, isLoading, getProducts } = useAppContext();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await getAllProducts(10);
-      setProducts(data);
-    };
-
-    fetchData();
+    if (products.length === 0) {
+      getProducts();
+    }
   }, []);
 
   return (
@@ -28,7 +25,8 @@ const ProductsFeatured = () => {
           </Link>
         </header>
 
-        <ProductsCarousel products={products} />
+        {isLoading && <ProductsLoading />}
+        <ProductsCarousel products={products.slice(0, 10)} />
       </div>
     </section>
   );

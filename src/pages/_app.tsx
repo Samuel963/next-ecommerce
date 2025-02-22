@@ -14,6 +14,7 @@ import { Analytics } from '@vercel/analytics/next';
 
 import { wrapper } from "../store";
 import * as gtag from "../utils/gtag";
+import { AppProvider } from "./AppContext";
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -36,7 +37,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
         --main-font: ${poppins.style.fontFamily};
       }
     `}</style>
-    <Component {...pageProps} />
+    <AppProvider>
+      <Component {...pageProps} />
+    </AppProvider>
     <Analytics />
   </Fragment>
 );

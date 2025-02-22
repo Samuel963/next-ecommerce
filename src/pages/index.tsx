@@ -4,8 +4,16 @@ import ProductsFeatured from "@/components/products-featured";
 import Subscribe from "@/components/subscribe";
 
 import Layout from "../layouts/Main";
+import { useAppContext } from "./AppContext";
+import { useEffect } from "react";
 
 const IndexPage = () => {
+  const { getProducts } = useAppContext();
+
+  useEffect(() => {
+    getProducts()
+  }, []);
+
   return (
     <Layout>
       <PageIntro />

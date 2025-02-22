@@ -1,15 +1,23 @@
-//import { useState } from "react";
-
+'use client'
+import { useEffect } from "react";
 import List from "./list";
+import { useAppContext } from "@/pages/AppContext";
 
 const ProductsContent = () => {
   //const [orderProductsOpen, setOrderProductsOpen] = useState(false);
+  const { products, isLoading, getProducts } = useAppContext();
+
+  useEffect(() => {
+    if (products.length === 0) {
+      getProducts();
+    }
+  }, []);
 
   return (
     <section className="products-content">
       <div className="products-content__intro">
         <h2>
-          Todos
+          Todos ({products.length})
         </h2>
         {/*
         <button
@@ -41,7 +49,7 @@ const ProductsContent = () => {
         </form>
         */}
       </div>
-      <List />
+      <List products={products} isLoading={isLoading} />
     </section>
   );
 };

@@ -34,21 +34,20 @@ const ProductsCarousel = ({ products }: any) => {
         slidesPerView={slidesPerView}
         className="swiper-wrapper"
       >
-        {products &&
-          products.map((item: any, index: any) => (
-            <SwiperSlide key={item.id}>
-              <ProductItem
-                id={item.id}
-                name={getId(item.id)}
-                price={item.price}
-                color={item.color}
-                discount={item.discount}
-                currentPrice={item.currentPrice}
-                key={index}
-                thumb={item.thumb}
-              />
-            </SwiperSlide>
-          ))}
+        {products.map((item: any, index: any) => (
+          <SwiperSlide key={item.id}>
+            <ProductItem
+              id={item.id}
+              name={getId(item.id)}
+              price={item.price}
+              color={item.color}
+              discount={item.discount}
+              currentPrice={item.currentPrice}
+              key={index}
+              thumb={item.thumb}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

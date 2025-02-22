@@ -107,7 +107,7 @@ export const useProductForm = () => {
     formToSend.append("colors", JSON.stringify(colors));
     formToSend.append("description", description);
 
-    /*try {
+    try {
       const response = await fetch(`${BASE_URL}products/`, {
         method: "POST",
         body: formToSend,
@@ -123,7 +123,7 @@ export const useProductForm = () => {
       alert("Erro ao enviar produto: " + error.message);
     } finally {
       setIsUploading(false);
-    }*/
+    }
   };
 
   return {

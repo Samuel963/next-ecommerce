@@ -1,28 +1,28 @@
 'use client'
-import { useEffect, useState } from "react";
-
-import { getAllProducts } from "@/pages/api/getProducts";
 import { getId } from "@/utils/getID";
 
 import ProductItem from "../../product-item";
 import ProductsLoading from "./loading";
 
-const ProductsContent = () => {
-  const [products, setProducts] = useState([]);
+type Product = {
+  id: string;
+  name: string;
+  price: number;
+  color: string;
+  currentPrice: number;
+  thumb: string;
+}
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getAllProducts();
-      setProducts(data);
-    };
+interface Products {
+  products: Array<Product>;
+  isLoading: boolean;
+}
 
-    fetchData();
-  }, []);
+const ProductsContent = ({ products, isLoading }: Products) => {
 
   return (
     <>
-      {!products && <ProductsLoading />}
-
+      {isLoading && <ProductsLoading />}
       <section className="products-list">
         {products.map((item: any, index: any) => (
           <ProductItem
