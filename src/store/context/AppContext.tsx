@@ -1,6 +1,7 @@
 // context/AppContext.js
+import React from 'react';
 import { createContext, useContext, useState } from 'react';
-import { getAllProducts } from './api/getProducts';
+import { getAllProducts } from '../../pages/api/getProducts';
 
 // Criação do contexto
 const AppContext = createContext({
@@ -33,5 +34,4 @@ export const AppProvider = ({ children }: any) => {
   );
 };
 
-// Hook customizado para facilitar o uso do contexto
 export const useAppContext = () => useContext(AppContext);

@@ -1,7 +1,7 @@
 'use client'
 import { useEffect } from "react";
 import List from "./list";
-import { useAppContext } from "@/pages/AppContext";
+import { useAppContext } from "@/store/context/AppContext";
 
 const ProductsContent = () => {
   //const [orderProductsOpen, setOrderProductsOpen] = useState(false);

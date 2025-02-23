@@ -4,7 +4,7 @@ import ProductsFeatured from "@/components/products-featured";
 import Subscribe from "@/components/subscribe";
 
 import Layout from "../layouts/Main";
-import { useAppContext } from "./AppContext";
+import { useAppContext } from "../store/context/AppContext";
 import { useEffect } from "react";
 
 const IndexPage = () => {

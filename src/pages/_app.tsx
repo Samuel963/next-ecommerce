@@ -14,7 +14,7 @@ import { Analytics } from '@vercel/analytics/next';
 
 import { wrapper } from "../store";
 import * as gtag from "../utils/gtag";
-import { AppProvider } from "./AppContext";
+import { AppProvider } from "../store/context/AppContext";
 
 const isProduction = process.env.NODE_ENV === "production";
 

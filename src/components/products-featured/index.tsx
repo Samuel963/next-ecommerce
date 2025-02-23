@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 
 import ProductsCarousel from "./carousel";
-import { useAppContext } from "@/pages/AppContext";
+import { useAppContext } from "@/store/context/AppContext";
 import ProductsLoading from "../products-content/list/loading";
 
 const ProductsFeatured = () => {
