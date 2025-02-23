@@ -1,15 +1,15 @@
-import Slider from "rc-slider";
+//import Slider from "rc-slider";
 import { useState } from "react";
 
-import productsColors from "../../utils/data/products-colors";
+//import productsColors from "../../utils/data/products-colors";
 //import productsSizes from "../../utils/data/products-sizes";
 // data
 import productsTypes from "../../utils/data/products-types";
 import Checkbox from "./form-builder/checkbox";
-import CheckboxColor from "./form-builder/checkbox-color";
+//import CheckboxColor from "./form-builder/checkbox-color";
 
-const { createSliderWithTooltip } = Slider;
-const Range = createSliderWithTooltip(Slider.Range);
+//const { createSliderWithTooltip } = Slider;
+//const Range = createSliderWithTooltip(Slider.Range);
 
 const ProductsFilter = () => {
   const [filtersOpen, setFiltersOpen] = useState(false);
@@ -31,6 +31,7 @@ const ProductsFilter = () => {
       <div
         className={`products-filter__wrapper ${filtersOpen ? "products-filter__wrapper--open" : ""}`}
       >
+
         <div className="products-filter__block">
           <button type="button">Tipo</button>
           <div className="products-filter__block__content">
@@ -39,7 +40,7 @@ const ProductsFilter = () => {
             ))}
           </div>
         </div>
-
+        {/*
         <div className="products-filter__block">
           <button type="button">Preço</button>
           <div className="products-filter__block__content">
@@ -51,7 +52,7 @@ const ProductsFilter = () => {
             />
           </div>
         </div>
-        {/*
+        
         <div className="products-filter__block">
           <button type="button">Size</button>
           <div className="products-filter__block__content checkbox-square-wrapper">
@@ -65,7 +66,6 @@ const ProductsFilter = () => {
             ))}
           </div>
         </div>
-*/}
         <div className="products-filter__block">
           <button type="button">Color</button>
           <div className="products-filter__block__content">
@@ -81,6 +81,7 @@ const ProductsFilter = () => {
             </div>
           </div>
         </div>
+        */}
 
         <button
           type="submit"
