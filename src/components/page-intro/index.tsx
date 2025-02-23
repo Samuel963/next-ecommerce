@@ -6,20 +6,24 @@ const PageIntro = () => {
 
   return (
     <section className="page-intro">
-      <Swiper navigation effect="fade" className="swiper-wrapper">
+      <Swiper effect="fade" className="swiper-wrapper">
         <SwiperSlide>
           <div
             className="page-intro__slide"
-            style={{ backgroundImage: "url('/images/products/IMG_0335.jpg')" }}
+            style={{ backgroundImage: "url('/images/Home.PNG')" }}
           >
             <div className="container">
               <div className="page-intro__slide__content">
-                <h2>Tudo em Apliques e Sublimaçoes</h2>
+                <h2>Diversos Modelos de Aplique</h2>
+                <a href="https://www.instagram.com/rayssa_cortealaser/" target="_blank" className="btn-shop">
+                  <i className="icon-instagram" />
+                  rayssa_cortealaser
+                </a>
               </div>
             </div>
           </div>
         </SwiperSlide>
-
+        {/*
         <SwiperSlide>
           <div
             className="page-intro__slide"
@@ -36,6 +40,7 @@ const PageIntro = () => {
             </div>
           </div>
         </SwiperSlide>
+*/}
       </Swiper>
 
       <div className="shop-data">
