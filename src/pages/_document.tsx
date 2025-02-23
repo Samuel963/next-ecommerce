@@ -27,6 +27,12 @@ export default class CustomDocument extends Document<DocumentProps> {
       <Html lang="en">
         <Head>
           {/* We only want to add the scripts if in production */}
+          <meta property="og:url" content="https://rayssa-corte-a-laser.vercel.app/" />
+          <meta property="og:title" content="Rayssa Corte a Laser" />
+          <meta property="og:description" content="Tudo em apliques e corte a laser" />
+          <meta property="og:image" content="https://rayssacortealaser.shop/logo.png" />
+          <meta property="og:image:alt" content="Logo" />
+
           {isProduction && (
             <>
               {/* Global Site Tag (gtag.js) - Google Analytics */}
