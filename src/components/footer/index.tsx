@@ -91,7 +91,7 @@ const Footer = () => {
 
       <div className="site-footer__bottom">
         <div className="container">
-          <p>DESENVOLVIDOR POR ES.CO - © 2025.</p>
+          <p>DESENVOLVIDOR POR APOLLO.CO - © 2025.</p>
         </div>
       </div>
     </footer>
