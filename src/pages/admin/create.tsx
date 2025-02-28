@@ -1,6 +1,6 @@
 import UploadImageWithProductData from "@/components/create-product";
 
-import Layout from "../layouts/Main";
+import Layout from "../../layouts/Main";
 
 const ProductCreate = () => (
   <Layout>

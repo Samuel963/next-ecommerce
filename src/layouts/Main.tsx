@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 import Header from "@/components/header";
+import HeaderAdmin from "@/components/header-admin";
 
 type LayoutType = {
   title?: string;
@@ -20,8 +21,7 @@ const MainLayout = ({
       <Head>
         <title>{title}</title>
       </Head>
-
-      <Header />
+      {pathname.includes("/admin") ? <HeaderAdmin /> : <Header />}
 
       <main className={pathname !== "/" ? "main-page" : ""}>{children}</main>
     </div>
