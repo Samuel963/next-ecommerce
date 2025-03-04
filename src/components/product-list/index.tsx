@@ -1,11 +1,12 @@
 // components/TabelaDeProdutos.js
 
 import { useAppContext } from "@/store/context/AppContext";
+import { ProductTypeList } from "@/types";
 import { getId } from "@/utils/getID";
 import React, { useEffect, useState } from "react";
 
 const ProductListComponent = () => {
-  const { products, getProducts } = useAppContext();
+  const { products, getProducts, deleteItem } = useAppContext();
 
   // Estados para armazenar os filtros
   const [filtroId] = useState("");
@@ -21,17 +22,17 @@ const ProductListComponent = () => {
 
   // Função para filtrar os produtos com base nos filtros aplicados
   const filtrarProdutos = () => {
-    return products.filter((produto) => {
+    return products.filter((produto: ProductTypeList) => {
       return (
         (filtroId === "" || produto.id.toString().includes(filtroId)) &&
         (filtroNome === "" ||
           getId(produto.id).toLowerCase().includes(filtroNome.toLowerCase())) &&
         (filtroCategoria === "" ||
           produto.category
-            .toLowerCase()
+            ?.toLowerCase()
             .includes(filtroCategoria.toLowerCase())) &&
         (filtroPreco === "" ||
-          produto.currentPrice.toString().includes(filtroPreco))
+          produto.currentPrice?.toString().includes(filtroPreco))
       );
     });
   };
@@ -87,6 +88,10 @@ const ProductListComponent = () => {
     ...buttonStyle,
     backgroundColor: "#dc3545", // vermelho
     color: "white",
+  };
+
+  const handleDelete = async (id: string) => {
+    await deleteItem(id);
   };
 
   return (
@@ -151,14 +156,13 @@ const ProductListComponent = () => {
         <thead>
           <tr>
             <th style={thStyle}></th>
-            <th style={thStyle}>Nome</th>
-            <th style={thStyle}>Categoria</th>
+            <th style={thStyle}>Código</th>
             <th style={thStyle}>Preço</th>
             <th style={thStyle}>Ações</th>
           </tr>
         </thead>
         <tbody>
-          {filtrarProdutos().map((produto, index) => (
+          {filtrarProdutos().map((produto: ProductTypeList, index) => (
             <tr
               key={produto.id}
               style={index % 2 === 0 ? trEvenStyle : {}}
@@ -176,10 +180,14 @@ const ProductListComponent = () => {
                 />
               </td>
               <td style={thTdStyle}>{getId(produto.id)}</td>
-              <td style={thTdStyle}>{produto.category}</td>
               <td style={thTdStyle}>R${produto.currentPrice}</td>
               <td style={thTdStyle}>
-                <button style={deleteButtonStyle}>Excluir</button>
+                <button
+                  style={deleteButtonStyle}
+                  onClick={() => handleDelete(produto.id)}
+                >
+                  Excluir
+                </button>
               </td>
             </tr>
           ))}
